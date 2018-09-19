@@ -1,0 +1,6 @@
+<div class="nested-field">
+    <%=f.label :reply %>
+    <%=f.text_field :body%>
+    <%= f.check_box :_destroy %>
+   <%= link_to_remove_association "remove this reply", f, {wrapper_class: 'replies'} %>
+</div>

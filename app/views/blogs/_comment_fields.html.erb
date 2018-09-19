@@ -1,0 +1,14 @@
+<div class="nested-fields">
+  <%= f.label :comment%>
+  <%= f.text_field :body%>
+   <%= f.check_box :_destroy %>
+   <%= link_to_remove_association "remove this comment", f %>
+<h3> replies for this comments </h3> <a href="#" class="hide_replies" >hide</a>&nbsp;<%= link_to_add_association 'add reply',f, :replies, data: {association_insertion_node: '.replies', association_insertion_method: :append}%>
+    <div class="replies">
+      <ul style="list-style: none;">
+        <%=f.fields_for :replies do |reply_form|%>
+          <%render 'reply_fields', f: reply_form%>
+        <%end%>
+      </ul>
+    </div>
+</div>

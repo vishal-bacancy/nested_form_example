@@ -1,0 +1,36 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @blog.title %>
+</p>
+
+<p>
+  <strong>Body:</strong>
+  <%= @blog.body %>
+</p>
+<%if @blog.comments.present?%>
+<p><u>Comments</u></p>
+<ol>
+    <% for comment in @blog.comments %>
+      <li>
+        <%= comment.body %>
+        <%if comment.replies.present?%>
+        <p><u>Replies</u></p>
+        <ul>
+        <% for reply in comment.replies %>
+          <li><%= reply.body %></li>
+        <% end %>
+        </ul>
+        <%else%>
+          <p><u>No Replies yet</u></p>
+        <%end%>
+      </li>
+    <% end %>
+</ol>
+<%else%>
+<p>no comments yet
+  <%end%>
+<br/>
+<%= link_to 'Edit', edit_blog_path(@blog) %> |
+<%= link_to 'Back', blogs_path %>
