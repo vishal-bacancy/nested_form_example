@@ -1,24 +1,18 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+this is simple 2 level nested form example. I have used cocoon for adding new form dynamically.
 
 Things you may want to cover:
 
-* Ruby version
+* Ruby version : 2.5.0
+* Rails version : 5.2.1
 
-* System dependencies
+* Things to do :
 
-* Configuration
+* clone the example
 
-* Database creation
+* bundle install
 
-* Database initialization
+* rails db:setup
 
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+* rails s
